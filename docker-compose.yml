@@ -1,0 +1,34 @@
+version: '2.4'
+
+services:
+  init:
+    image: initial
+    container_name: new_container
+    environment:
+      - SERVICE_B_ENABLED=True
+    volumes:
+      - templates:/render/templates
+      - nginx-config:/etc/nginx
+    networks:
+      - net
+
+  nginx:
+    image: nginx
+    container_name: new_container_nginx
+    depends_on:
+      - init
+    command: nginx -g "daemon off;"
+    volumes:
+      - templates:/templates
+      - nginx-config:/etc/nginx
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
+
+volumes:
+  templates:
+  nginx-config:
+
