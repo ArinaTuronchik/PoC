@@ -1,0 +1,13 @@
+store_path : "/render/templates/nginx.conf"
+home_path : "/home/arina/PycharmProjects/PoC/with_ansible_simply/templates/nginx.conf"
+SERVICE_A_ENABLED: "{{ lookup('env','SERVICE_A_ENABLED')  }}"
+SERVICE_A_SCHEMA: "{{ lookup('env','SERVICE_A_SCHEMA') }}"
+SERVICE_A: "{{ lookup('env','SERVICE_A') }}"
+SERVICE_A_IP: "{{ lookup('env','SERVICE_A_IP')  }}"
+SERVICE_A_PORT: "{{ lookup('env','SERVICE_A_PORT') }}"
+
+SERVICE_B_ENABLED: "{{ lookup('env','SERVICE_B_ENABLED')  }}"
+SERVICE_B_SCHEMA: "{{ lookup('env','SERVICE_B_SCHEMA') }}"
+SERVICE_B: "{{ lookup('env','SERVICE_B') }}"
+SERVICE_B_IP: "{{ lookup('env','SERVICE_B_IP')  }}"
+SERVICE_B_PORT: "{{ lookup('env','SERVICE_B_PORT') }}"

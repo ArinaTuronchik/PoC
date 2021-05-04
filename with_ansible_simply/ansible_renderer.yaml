@@ -1,0 +1,24 @@
+---
+
+- hosts: 127.0.0.1
+  remote_user: root
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: Display all infra variables
+      debug:
+        var: jsonVar
+        verbosity: 2
+
+    - name: Check if template file exists
+      file:
+        path: "{{ store_path }}"
+        state: file
+        mode: '0755'
+
+    - name: Render
+      template:
+        src: "{{ store_path }}"
+        dest: /etc/nginx/nginx.conf
+        mode: '0644'
+

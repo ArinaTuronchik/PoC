@@ -1,0 +1,26 @@
+---
+
+- hosts: all
+  remote_user: root
+  vars:
+    jsonVar: "{{ lookup('file', 'infra.json') | from_json }}"
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: Display all infra variables
+      debug:
+        var: jsonVar
+        verbosity: 2
+
+    - name: Check if template file exists
+      file:
+        path: "{{ home_path }}"
+        state: file
+        mode: '0755'
+
+    - name: Render
+      template:
+        src: "{{ home_path }}"
+        dest: ./templates//nginx.conf.r
+        mode: '0644'
+

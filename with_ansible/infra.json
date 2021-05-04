@@ -1,0 +1,22 @@
+{
+    "SERVICE_A_ENABLED": {
+        "SERVICE": "service_a",
+        "ENABLED": "True",
+        "locations": ["/service/a", "/service/a/version", "/service/a/events"],
+        "SERVICE_IP_ADDRESS": "127.0.0.1",
+        "SERVICE_PORT": "8080",
+        "schema": "http"
+    },
+    "SERVICE_B_ENABLED": {
+        "SERVICE": "service_b",
+        "ENABLED": "True",
+        "locations": ["/service/b", "/service/b/version", "/service/b/events"],
+        "SERVICE_IP_ADDRESS": "127.0.0.1",
+        "SERVICE_PORT": "9000",
+        "schema": "https"
+    },
+    "SERVICE_D_ENABLED": {
+        "ENABLED": null
+    }
+
+}
