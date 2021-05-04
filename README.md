@@ -1,4 +1,9 @@
 # PoC
+
+## with_ansible --> configuration with JSON parser
+
+## with_ansible_simply --> *kind of a final product*
+
 ## templates/ --> has one template file
 What we should improve:
 1. maybe think about clientapi/partnerapi/deviceapi
